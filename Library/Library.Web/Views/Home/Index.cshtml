@@ -1,0 +1,27 @@
+﻿@model Library.Core.Models.Users
+
+@{ 
+
+}
+@section Scripts {
+
+}
+@section Body {
+<div id="loginpanel" class="section panel panel-primary">
+    <div class="panel-heading">Библиотека</div>
+    <div class="panel-body">
+        @using (Html.BeginForm())
+        {
+            <div class="form-group">
+                <label>Логин</label>
+                @Html.TextBoxFor(x => x.Login, new { @class = "form-control"})
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control"})
+            </div>
+            <button type="submit" class="btn btn-xs btn-primary">Войти</button>
+        }
+    </div>
+</div>
+}

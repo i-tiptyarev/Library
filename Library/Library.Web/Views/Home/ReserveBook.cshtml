@@ -1,0 +1,49 @@
+﻿@using Library.Core.Models
+@model IEnumerable<Library.Core.Models.Books>
+
+@{
+    ViewBag.Title = "ReserveBook";
+}
+
+
+@section Scripts{
+    
+}
+
+@section Body{
+    <div class="section panel panel-primary">
+    <div class="panel-heading">Список книг</div>
+    <div class="panel-body">
+        <p>
+            @Html.ActionLink("На главную", "Books", null, new { @class = "btn btn-xs btn-primary" })
+            @Html.ActionLink("Выйти", "Index", null, new { @class = "btn btn-xs btn-primary" })
+        </p>
+        <table class="table table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Дата возврата</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Author</td>
+                        <td>@item.GiveBackDate</td>
+                        <td>
+                            <div class="btn-group">
+                                @Html.ActionLink("Забронировать", "ReserveBook", new Books{  Id = item.Id, Name = item.Name, Author = item.Author, GiveBackDate = item.GiveBackDate }, new { @class = "btn btn-xs btn-primary" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>    
+}
+

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Library.Core.Models.Books>
+
+@{
+    ViewBag.Title = "AdminBooks";
+}
+
+@section Scripts{
+    
+}
+
+@section Body{
+
+<div class="section panel panel-primary">
+    <div class="panel-heading">Список книг</div>
+    <div class="panel-body">
+        <p>
+            @Html.ActionLink("Добавить книгу в библиотеку", "AdminAddBook", null, new { @class="btn btn-xs btn-primary"})
+            @Html.ActionLink("На главную", "AdminPanel", null, new { @class = "btn btn-xs btn-primary" })
+            @Html.ActionLink("Выйти", "Index", null, new { @class = "btn btn-xs btn-primary" })
+        </p>
+        <table class="table table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Дата возврата</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Author</td>
+                    <td>@item.GiveBackDate</td>
+                    <td>
+                        <div class="btn-group">
+                            @Html.ActionLink("Изменить", "AdminEditBook", new { id = item.Id }, new { @class = "btn btn-xs btn-primary" })
+                            @Html.ActionLink("Удалить", "AdminDeleteBook", new { id = item.Id }, new { @class = "btn btn-xs btn-primary" })
+                        </div>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+}

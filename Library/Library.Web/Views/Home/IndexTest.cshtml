@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Hello Ext</title>
+
+    <link rel="stylesheet" type="text/css" href="~/ExtJS/resources/css/ext-all.css">
+    <script type="text/javascript" src="~/ExtJS/ext-all-dev.js"></script>
+    <script>
+        Ext.onReady(function () {
+            var logintb = new Ext.form.TextField({
+                fieldLabel: "Логин",
+                name: "LoginTB",
+                emptyText: "Введите сюда логин",
+                id: "login"
+            });
+
+            var passwordtb = new Ext.form.TextField({
+                fieldLabel: "Пароль",
+                name: "PasswordTB",
+                emptyText: "Введите сюда пароль",
+                id: "password"
+            });
+
+
+
+
+
+            var form = new Ext.FormPanel({
+                renderTo: Ext.getBody(),
+                title: "Основная панель",
+                id: "loginform",
+                layout: {
+                    type: "vbox",
+                    align: "stretch"
+                },
+                items: [logintb, passwordtb],
+                buttons: [
+                    {
+                        text: "Войти",
+                        hadler: function ()
+                        {
+                            Ext.getCmp("loginform").getForm().Submit();
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

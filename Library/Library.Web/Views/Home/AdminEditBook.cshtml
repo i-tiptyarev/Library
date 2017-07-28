@@ -1,0 +1,30 @@
+﻿@model Library.Core.Models.Books
+
+@{
+    ViewBag.Title = "AdminEditBook";
+}
+
+@section Scripts{
+
+}
+
+@section Body{
+    <div class="section panel panel-primary">
+        <div class="panel-heading">Добавить книгу</div>
+        <div class="panel-body">
+            @using (Html.BeginForm("AdminEditBook", "Home", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Название</label>
+                    @Html.EditorFor(x => x.Name)
+                </div>
+                <div class="form-group">
+                    <label>Автор</label>
+                    @Html.EditorFor(x => x.Author)
+                </div>
+                <button type="submit" class="btn btn-xs btn-primary">Изменить</button>
+            }
+        </div>
+    </div>
+}
+

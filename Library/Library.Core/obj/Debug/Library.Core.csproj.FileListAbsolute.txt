@@ -1,0 +1,5 @@
+c:\users\vanek\documents\visual studio 2017\Projects\Library\Library.Core\bin\Debug\Library.Core.dll
+c:\users\vanek\documents\visual studio 2017\Projects\Library\Library.Core\bin\Debug\Library.Core.pdb
+c:\users\vanek\documents\visual studio 2017\Projects\Library\Library.Core\obj\Debug\Library.Core.csprojResolveAssemblyReference.cache
+c:\users\vanek\documents\visual studio 2017\Projects\Library\Library.Core\obj\Debug\Library.Core.dll
+c:\users\vanek\documents\visual studio 2017\Projects\Library\Library.Core\obj\Debug\Library.Core.pdb

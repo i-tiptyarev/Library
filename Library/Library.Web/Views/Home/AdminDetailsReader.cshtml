@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Library.Core.Models.Books>
+
+@{
+
+}
+
+@section Scripts{
+
+}
+
+@section Body{
+    <div id="booklist" class="section panel panel-primary">
+        <div class="panel-heading">Список книг - @ViewBag.ReaderName Логин: @ViewBag.Login Пароль:@ViewBag.Password</div>
+        <div class="panel-body">
+            <p>
+                @Html.ActionLink("На главную", "AdminPanel", null, new { @class = "btn btn-xs btn-primary" })
+                @Html.ActionLink("Выйти", "Index", null, new { @class = "btn btn-xs btn-primary" })
+            </p>
+            <table class="table table-striped table-condensed">
+                <thead><tr><th>Название книги</th><th>Автор</th><th>Дата возвращения</th><th></th></tr></thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.Author</td>
+                            <td>@item.GiveBackDate</td>
+                            <td>
+                                @Html.ActionLink("Вернуть", "DeleteBook", new { id = item.Id }, new { @class = "btn btn-xs btn-primary" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @Html.ActionLink("Выдать книгу", "AddBookForm", null, new { @class = "btn btn-xs btn-primary" })
+        </div>
+    </div>
+}
+

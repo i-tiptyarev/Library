@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "AdminPanel";
+}
+
+
+@section Scripts{
+    
+}
+
+@section Body{
+    <div class="section panel panel-primary">
+        <div class="panel-heading">Панель администратора</div>
+        <div class="panel-body">
+            @Html.ActionLink("Просмотреть список книг", "AdminBooks", null, new { @class="btn btn-xs btn-primary"})
+            @Html.ActionLink("Просмотреть список читателей", "AdminReaders", null, new { @class = "btn btn-xs btn-primary" })
+            @Html.ActionLink("Выйти", "Index", null, new { @class = "btn btn-xs btn-primary" })
+        </div>
+    </div>    
+}
+

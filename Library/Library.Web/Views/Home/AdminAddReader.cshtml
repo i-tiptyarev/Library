@@ -1,0 +1,26 @@
+﻿@model Library.Core.Models.Readers
+
+@{
+    ViewBag.Title = "AdminAddReader";
+}
+
+@section Scripts{
+
+}
+
+@section Body{
+    <div class="section panel panel-primary">
+        <div class="panel-heading">Добавить книгу</div>
+        <div class="panel-body">
+            @using (Html.BeginForm("AdminAddReader", "Home", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label>Название</label>
+                    @Html.TextBoxFor(x => x.FIO, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-xs btn-primary">Добавить</button>
+            }
+        </div>
+    </div>
+}
+
